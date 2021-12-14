@@ -16,6 +16,7 @@ class CreateInventariosTable extends Migration
         Schema::create('inventarios', function (Blueprint $table) {
             $table->increments('id');
             $table->integer("responsables_id");
+            $table->integer("area_id");
             $table->date("fecha_adquisicion");
             $table->string("codigo", 255);
             $table->string("numero_folio_comprobante", 255)->nullable();
@@ -24,7 +25,8 @@ class CreateInventariosTable extends Migration
             $table->string("modelo", 255);
             $table->string("serie", 255);
             $table->integer("cantidad");
-            $table->integer("costo_adquisicion");
+            $table->string("img");
+            $table->string("nombre");
             $table->timestamps();
         });
     }
